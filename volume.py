@@ -1,3 +1,4 @@
+# coding=utf-8
 import getopt
 import json
 import math
@@ -214,19 +215,19 @@ def analyze_file(filename):
   return result
 
 def usage():
-  print 'volume.py -f <inputfile>'
+  print('volume.py -f <inputfile>')
   sys.exit(0)
 
-def main(argv):
-  try:
-    opts, args = getopt.getopt(argv, "hf:", ["file="])
-  except getopt.GetoptError:
-    usage()
+def main(filename):
+  # try:
+  #   opts, args = getopt.getopt(argv, "hf:", ["file="])
+  # except getopt.GetoptError:
+  #   usage()
 
-  filename = None
-  for opt, arg in opts:
-    if opt in ("-f", "--file"):
-      filename = arg
+  # filename = None
+  # for opt, arg in opts:
+  #   if opt in ("-f", "--file"):
+  #     filename = arg
 
   if filename != None:
     try:
@@ -243,4 +244,4 @@ def main(argv):
   sys.exit(0)
 
 if __name__ == '__main__':
-  main(sys.argv[1:])
+  main("C:\Users\lenovo\Desktop\张工精确项目\图纸\jg.STEP")

@@ -1,3 +1,4 @@
+# coding=utf-8
 import getopt
 import os
 import sys
@@ -37,19 +38,19 @@ def convert(source, dest):
   else:
       print "Error, can't read file: %s" % './demo.stp'
 
-def main(argv):
-  try:
-    opts, args = getopt.getopt(argv, "hi:o:", ["infile=", "outfile="])
-  except getopt.GetoptError:
-    usage()
-
-  source = None
-  dest = None
-  for opt, arg in opts:
-    if opt in ("-i", "--infile"):
-      source = arg
-    if opt in ("-o", "--outfile"):
-      dest = arg
+def main(source, dest):
+  # try:
+  #   opts, args = getopt.getopt(argv, "hi:o:", ["infile=", "outfile="])
+  # except getopt.GetoptError:
+  #   usage()
+  #
+  # source = None
+  # dest = None
+  # for opt, arg in opts:
+  #   if opt in ("-i", "--infile"):
+  #     source = arg
+  #   if opt in ("-o", "--outfile"):
+  #     dest = arg
 
   if source != None and dest != None:
     convert(source, dest)
@@ -59,5 +60,5 @@ def main(argv):
   sys.exit(0)
 
 if __name__ == '__main__':
-  main(sys.argv[1:])
+  main("C:\Users\lenovo\Desktop\张工精确项目\图纸\jg.STEP", "C:\Users\lenovo\Desktop\张工精确项目\图纸\jgstl.stl")
 
